@@ -1,0 +1,2 @@
+module KimokHelper
+end

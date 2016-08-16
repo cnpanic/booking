@@ -1,17 +1,22 @@
 Rails.application.routes.draw do
-  
+
+  devise_for :users 
   root "home#index"
+
   get 'index' => "home#index"
   get 'about' => "home#about"
   get 'contact' => "home#contact"
   get 'faq' => "home#faq"
   get 'full-width' => "home#full-width"
-  get 'portfolio-3-col' => "home#portfolio-3-col"
-  get 'portfolio-item' => "home#portfolio-item"
+  get 'list' => "home#list"
+  get 'detail(/:id)' => "home#detail"
   get 'services' => "home#services"
-  get 'sidebar' => "home#sidebar"
+  get 'mypage' => "home#mypage"
+  get 'bookup' => "home#bookup"
   
-  
+  post '/bookupload' => "home#bookupload"
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -41,6 +41,9 @@ header.carousel .fill {
     background-position: center;
     background-size: cover;
 }
+.fill1{ background-image: url(book1.jpeg); }
+.fill2{ background-image: url(book2.jpeg); }
+.fill3{ background-image: url(book3.jpeg); }
 
 /* 404 Page Styles */
 
