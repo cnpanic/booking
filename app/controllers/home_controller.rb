@@ -2,7 +2,6 @@ class HomeController < ApplicationController
   def index
 
     @every_book = Book.all  
-
   end
   
   def bookupload
@@ -29,5 +28,12 @@ class HomeController < ApplicationController
   def list
     @books = Book.all
   end
+  
+  def book_content
+  
+  @one_book = Book.find(params[:id])
+  
+  end
+  
   
 end

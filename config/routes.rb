@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users 
+  devise_for :users, controllers: {:registrations => "users/registrations", :sessions => "users/sessions" } 
   root "home#index"
 
   get 'index' => "home#index"
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'services' => "home#services"
   get 'mypage' => "home#mypage"
   get 'bookup' => "home#bookup"
-  
+  get 'book_content/:id' => "home#book_content"
   post '/bookupload' => "home#bookupload"
 
 
