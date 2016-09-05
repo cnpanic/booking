@@ -12,8 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+
 //= require bootstrap
 //= require bootstrap.min
+//= require dropdown
+//= require collapse
 //= require contact_me
 //= require jqBootstrapValidation
 //= require_tree .

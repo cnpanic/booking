@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160816070346) do
+ActiveRecord::Schema.define(version: 20160831175041) do
+
+  create_table "bookreplies", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "book_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "books", force: :cascade do |t|
     t.string   "subject"
@@ -19,8 +27,25 @@ ActiveRecord::Schema.define(version: 20160816070346) do
     t.string   "writer"
     t.string   "lesson"
     t.string   "publish"
+    t.integer  "phone_number"
     t.string   "detail"
     t.string   "image_url"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "replies", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "post_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -28,6 +53,9 @@ ActiveRecord::Schema.define(version: 20160816070346) do
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
+    t.string   "name",                   default: "", null: false
+    t.string   "major",                  default: "", null: false
+    t.string   "nickname",               default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

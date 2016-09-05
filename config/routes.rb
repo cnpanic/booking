@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   devise_for :users, controllers: {:registrations => "users/registrations", :sessions => "users/sessions" } 
-  root "home#index"
-
+  root 'home#division'
+  resources :home
   get 'index' => "home#index"
   get 'about' => "home#about"
   get 'contact' => "home#contact"
@@ -13,10 +13,39 @@ Rails.application.routes.draw do
   get 'services' => "home#services"
   get 'mypage' => "home#mypage"
   get 'bookup' => "home#bookup"
+  get 'division' => "home#division"
+  
   get 'book_content/:id' => "home#book_content"
   post '/bookupload' => "home#bookupload"
+  
+  get '/mypage_selling' => "home#mypage_selling"
+  get 'delete_book/:@one_book.id' => 'home#delete_book'
+  
+  # 여기서부터 신새날이 게시판 route를 올린다-------------------------------------------
+  
+  get '/index2' => "home#index2"
 
+  post '/write' => "home#write"
 
+  get '/show/:post_id' => "home#show"
+
+  get '/update/:post_id' => "home#update"
+
+  post '/real_update/:post_id' => "home#real_update"
+
+  get '/destroy/:post_id' => "home#destroy"
+  
+  get '/popup' => "home#popup"
+  
+  get '/list_board' => "home#list_board"
+  
+  post '/reply_write' =>"home#reply_write"
+
+# 여기까지 신새날이 게시판 route를 올린다-------------------------------------------
+
+  post '/bookreply' => "home#bookreply"
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

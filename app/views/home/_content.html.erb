@@ -1,0 +1,28 @@
+
+    <!-- Page Content -->
+<div class="container">
+       <!-- Portfolio Section -->
+    <div class="row">
+        <% @every_book.each do |p| %> 
+        <a href="/book_content/<%= p.id %>">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="card hovercard" style="cursor: pointer">
+                    <img src="<%= p.image_url %>" style="width: 350px; height: 200px" alt=""/>
+                <div class="avatar">
+                    <img src="../assets/rebook.PNG" style="width: 80px; height: 80px" alt="" />
+                </div>
+                <div class="info">
+                    <div class="title">
+                     책이름: <%= p.bookname %>
+                    </div>
+                    <div class="desc">저자: <%= p.writer %></div>
+                    <div class="desc">관련강의: <%= p.lesson %></div>
+                    <div class="desc">출판사: <%= p.publish %></div>
+
+                </div>
+        </a>
+                </div>
+            </div>    
+        <% end %>
+    </div>
+</div>

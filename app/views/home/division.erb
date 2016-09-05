@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+
+  </head>
+
+  <body data-spy="scroll" data-offset="0" data-target="#theMenu">
+
+    <style media="screen">
+      html, body{ height:100%; margin:0; padding:0;}
+      #gnb{height: 100px; width:100%; background:green;}
+      #headerwrap{min-height:100%; margin-top:-100px;}
+      .first{
+        margin-top: 25%;
+        color: white;
+        font-size: 80px;
+        font-weight: 700;
+        letter-spacing: 3px;
+      }
+      .second{
+        color: white;
+        font-size: 20px;
+        font-weight: 100;
+        letter-spacing: 2px;
+      }
+      #buttonBox-wrapper{
+        z-index:2;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+      }
+      #buttonBox-wrapper > div{
+        padding: 35% 12% 12%;
+      }
+      #left{
+        height:100%;
+        background:rgba(0,0,0,0);
+        padding-left:20% !important;
+        padding-right:4% !important;
+        background-image: url("https://hd.unsplash.com/photo-1465929639680-64ee080eb3ed");
+        background-size: cover;
+        -moz-transition: all .3s ease; /* Firefox */
+        -webkit-transition: all .3s ease; /* WebKit */
+        -o-transition: all .3s ease; /* Opera */
+        transition: all .3s ease; /* Standard */
+      }
+      #left:hover{
+        background-image: url("https://hd.unsplash.com/photo-1465929639680-64ee080eb3ed");
+        }
+      #right{
+        height:100%;
+        background:rgba(0,0,0,0);
+        padding-left:4% !important;
+        padding-right:20% !important;
+        background-image: url("http://cdn4.teen.com/wp-content/uploads/2016/04/spongebob-squarepants-im-not-ready-main.jpg");
+        -moz-transition: all .3s ease; /* Firefox */
+        -webkit-transition: all .3s ease; /* WebKit */
+        -o-transition: all .3s ease; /* Opera */
+        transition: all .3s ease; /* Standard */
+      }
+      #right:hover{
+        background:rgba(0,0,0,0.3);
+        background-image: url("http://cdn4.teen.com/wp-content/uploads/2016/04/spongebob-squarepants-im-not-ready-main.jpg");
+      }
+      .go_button{
+        /*display: inline-block;*/
+        background: rgba(255, 255, 255, 0.6);
+        -moz-transition: all .3s ease; /* Firefox */
+        -webkit-transition: all .3s ease; /* WebKit */
+        -o-transition: all .3s ease; /* Opera */
+        transition: all .3s ease; /* Standard */
+        width: 100%;
+        height: 100%;
+        font-size: 30px;
+        font-weight: 300;
+        text-align: center;
+        width: 360px;
+        height: 250px;
+        bottom: 20%;
+        position: absolute;
+        padding-top: 90px;
+        cursor: pointer;
+      }
+      .go_button:hover{
+        background: rgba(255, 255, 255, 1);
+      }
+      .go_button span{
+        font-weight:bold;
+        vertical-align: middle;
+      }
+      #buttonBox-wrapper > a{
+        color: #555;
+      }
+      #buttonBox-wrapper > a:hover{
+        color: #000;
+      }
+    </style>
+
+  	<!-- ========== HEADER SECTION ========== -->
+  	<div id="buttonBox-wrapper">
+  	  <a href="/index">
+  	    <div id="left" class="col-xs-6">
+    	    <div class="go_button" style="float: right;right: 0;border-right:1px solid rgba(0,0,0,0.5);">
+    	      <span>책 구입 및 판매</span>
+    	    </div>
+    	  </div>
+    	</a>
+    	<a href="/404">
+    	  <div id="right" class="col-xs-6">
+    	    <div class="go_button" style="float: left;left: 0;border-left:1px solid rgba(0,0,0,0.5);">
+    	      <span>개발 중 입니다.</span>
+    	    </div>
+    	  </div>
+    	</a>
+  	</div>
+
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+  	<script src="/entering/assets/js/classie.js"></script>
+      <script src="/entering/assets/js/bootstrap.min.js"></script>
+      <script src="/entering/assets/js/smoothscroll.js"></script>
+  	<script src="/entering/assets/js/main.js"></script>
+  </body>
+</html>

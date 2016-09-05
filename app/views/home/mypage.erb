@@ -31,7 +31,7 @@
             <div class="col-md-3">
                 <div class="list-group">
                     <a href="/index.html" class="list-group-item">Home</a>
-                    <a href="/list" class="list-group-item">판매 중인 책</a>
+                    <a href="/mypage_selling" class="list-group-item">판매 중인 책</a>
                     <a href="/" class="list-group-item">판매 완료된 책</a>
                     <a href="/bookup" class="list-group-item">책 등록하기</a>
                     <a href="/users/edit" class="list-group-item">개인 정보 수정</a>
@@ -40,8 +40,21 @@
             </div>
             <!-- Content Column -->
             <div class="col-md-9">
-                <h2>니가 알던 내가 아냐</h2>
-                <p>발바닥 키스</p>
+               		<!--아이디-->
+							<div bgcolor="#FFFFFF" height="35" width="130">
+							    <img src="https://secimage.yes24.com/sysimage/member/Indent_squareOrange.gif" hspace="7" vspace="3">아이디
+							</div>
+							<tr bgcolor="#FFFFFF" height="35">
+							    &nbsp;&nbsp<span class="info"><span id="CLabMemId"><%= current_user.email%></span></span>
+							</tr>
+					<!--한글 이름-->
+							<div bgcolor="#FFFFFF" height="35" width="130" valign="middle">
+							    <img src="https://secimage.yes24.com/sysimage/member/Indent_squareOrange.gif" hspace="7" vspace="3">이 름
+							</div>
+							<tr bgcolor="#FFFFFF" height="35">
+							    &nbsp;&nbsp;<span class="info"><span id="CLabMemNm"><%= current_user.name %></span></span>
+				            </tr>
+					
             </div>
         </div>
         <!-- /.row -->
