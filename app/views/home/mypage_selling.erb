@@ -32,7 +32,7 @@
             <div class="col-md-3">
                 <div class="list-group">
                     <a href="/index.html" class="list-group-item">Home</a>
-                    <a href="/list" class="list-group-item">판매 중인 책</a>
+                    <a href="/mypage_selling" class="list-group-item">판매 중인 책</a>
                     <a href="/" class="list-group-item">판매 완료된 책</a>
                     <a href="/bookup" class="list-group-item">책 등록하기</a>
                     <a href="/users/edit" class="list-group-item">개인 정보 수정</a>
@@ -40,16 +40,35 @@
                 </div>
             </div>
             <!-- Content Column -->
+            <% @every_book.each do |p| %>
+                <% if p.user_id == current_user.id %>
+                <a href="/book_content/<%= p.id %>">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="card hovercard" style="cursor: pointer">
+                            <img src="<%= p.image_url %>" style="width: 350px; height: 200px" alt=""/>
+                        <div class="avatar">
+                            <img src="../assets/rebook.PNG" style="width: 80px; height: 80px" alt="" />
+                        </div>
+                        <div class="info">
+                            <div class="title">
+                             책이름: <%= p.bookname %>
+                            </div>
+                            <div class="desc">저자: <%= p.writer %></div>
+                            <div class="desc">관련강의: <%= p.lesson %></div>
+                            <div class="desc">출판사: <%= p.publish %></div>
+        
+                        </div>
+                </a>
+                        </div>
+                    </div>
+                <% end %>    
+            <% end %>
             
         </div>
         <!-- /.row -->
-
-        <hr>
-
-        
+          
     </div>
     <!-- /.container -->
-
 </body>
 
 </html>

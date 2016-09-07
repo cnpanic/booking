@@ -1,6 +1,7 @@
 class Book < ActiveRecord::Base
-    
+    belongs_to :user
     has_many :bookreplies
+   
     
     def self.search(bookname)
         if bookname.nil?
@@ -11,8 +12,6 @@ class Book < ActiveRecord::Base
         else
            Book.all
         end
-        
-
     end
     
     # 현재 Book의 다음 Book

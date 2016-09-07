@@ -1,0 +1,41 @@
+<div class="container">
+    <form action="/update_book/<%= @one_book.id %>" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="subject">제목</label>
+        <input type="text" class="form-control" value="<%=@one_book.subject %>" name="subject" placeholder="제목">
+      </div>
+      <div class="form-group">
+        <label for="bookname">책이름</label>
+        <input type="text" class="form-control" value="<%=@one_book.bookname %>" name="bookname" placeholder="책이름">
+      </div>
+       <div class="form-group">
+        <label for="writer">저자</label>
+        <input type="text" class="form-control" value="<%=@one_book.writer %>" name="writer" placeholder="저자">
+      </div>
+       <div class="form-group">
+        <label for="lesson">강의이름</label>
+        <input type="text" class="form-control" value="<%=@one_book.lesson %>" name="lesson" placeholder="강의이름">
+      </div>
+       <div class="form-group">
+        <label for="publish">출판사</label>
+        <input type="text" class="form-control" value="<%=@one_book.publish %>" name="publish" placeholder="출판사">
+      </div>
+      <div class="form-group">
+        <label for="phone_number">전화번호</label>
+        <input type="text" class="form-control" value="<%=@one_book.phone_number %>" name="phone_number" placeholder="전화번호">
+      </div>
+      <div class="form-group">
+        <label for="detail">세부사항</label>
+        <textarea class="form-control" rows="5" value="<%=@one_book.detail %>" name="detail" placeholder="세부사항"></textarea>
+      </div>
+      
+ <!-- 첫번째 사진 -->
+      <div class="form-group">
+        <label for="exampleInputFile">사진선택</label>
+        <input type="file" name="pic" accept="image/*">
+        <p class="help-block">Example block-level help text here.</p>
+      </div>
+      
+      <button type="submit" class="btn btn-default">등록하기</button>
+    </form>
+</div>

@@ -12,8 +12,10 @@ class CreateBooks < ActiveRecord::Migration
       t.string :image_url #사진 url
       t.datetime :created_at #만들어진 시간
       t.datetime :updated_at #수정된 시간 
-   
+      t.integer :user_id 
+      t.integer :selling, default: "0"
       t.timestamps null: false
     end
   end
 end
+

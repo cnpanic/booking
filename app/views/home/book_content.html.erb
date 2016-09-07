@@ -61,11 +61,21 @@
                     <li>강의명: <%= @one_book.lesson %></li>
                     <li>출판사: <%= @one_book.publish %></li>
                     <% if user_signed_in? %>
-                    <li>전화번호: <%= @one_book.phone_number %></li>
+                        <li>전화번호: <%= @one_book.phone_number %></li>
+                        
+                        
+                        <% if @one_book.user_id == current_user.id %>
+                              <a href="/update_book_view/<%= @one_book.id %>" class="btn btn-default">수정</a>
+                              <a href="/delete_book/<%= @one_book.id %>" onclick="return confirm('파일을 삭제하시겠습니까?');" class="btn btn-default">파일삭제</a>
+                              <a href="/clean/<%= @one_book.id %>" class="btn btn-default">판매 완료</a>
+                                
+                        <% end %>
                     <% end %>
+                    
                     <% unless user_signed_in? %>
+                    
                     <% end %>
-                <a href="delete_book/<%= @one_book.id %>" onclick="return confirm('파일을 삭제하시겠습니까?');" class="btn btn-default">파일삭제</a>
+                
                 </ul>
                 </span>
             </div>
@@ -79,7 +89,11 @@
                         <input type="hidden" value="<%=@one_book.id%>" name="book_id"> 
                         <input type="text" class="form-control" name="content">
                   </div>
-	        	    <button type="submit" class="btn btn-default" style ="margin-top: 15px; margin-left:1044px" style="align:left" >댓글달기</button>
+            	<% if user_signed_in? %>      
+	        	  <button type="submit" class="btn btn-default" style ="margin-top: 15px; margin-left:1044px" style="align:left" >댓글달기</button>
+		        <% else %>
+	            
+	            <% end %>
 		          <div style="margin-top:100px">
 		              
 		          

@@ -7,19 +7,26 @@
         <a href="/book_content/<%= p.id %>">
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="card hovercard" style="cursor: pointer">
-                    <img src="<%= p.image_url %>" style="width: 350px; height: 200px" alt=""/>
-                <div class="avatar">
-                    <img src="../assets/rebook.PNG" style="width: 80px; height: 80px" alt="" />
-                </div>
-                <div class="info">
-                    <div class="title">
-                     책이름: <%= p.bookname %>
+             
+                    <% if p.selling == 0 %> 
+                        <img src="<%= p.image_url %>" style="width: 350px; height: 200px" alt=""/>
+                    <% else %>
+                        <img src="http://joonggo.sarangbang.com/mobile/img/saleOk.png" style="width: 350px; height: 200px" alt=""/>
+                        <div>판매-------------------------------완료</div>
+                    <% end %>
+                
+                    <div class="avatar">
+                        <img src="../assets/rebook.PNG" style="width: 80px; height: 80px" alt="" />
                     </div>
-                    <div class="desc">저자: <%= p.writer %></div>
-                    <div class="desc">관련강의: <%= p.lesson %></div>
-                    <div class="desc">출판사: <%= p.publish %></div>
-
-                </div>
+                    <div class="info">
+                        <div class="title">
+                         책이름: <%= p.bookname %>
+                        </div>
+                        <div class="desc">저자: <%= p.writer %></div>
+                        <div class="desc">관련강의: <%= p.lesson %></div>
+                        <div class="desc">출판사: <%= p.publish %></div>
+    
+                    </div>
         </a>
                 </div>
             </div>    

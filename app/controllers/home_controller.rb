@@ -6,6 +6,15 @@ class HomeController < ApplicationController
     
   end
 
+  def clean
+     @one_book = Book.find(params[:id])
+     @one_book.selling = "1"
+     @one_book.save
+     
+     redirect_to '/list'
+  end
+
+  
   def bookupload
     
     new_book = Book.new
@@ -16,6 +25,7 @@ class HomeController < ApplicationController
     new_book.publish = params[:publish]
     new_book.phone_number = params[:phone_number]
     new_book.detail = params[:detail]
+    new_book.user = current_user
     
     
     uploader = BookUploader.new
@@ -29,18 +39,43 @@ class HomeController < ApplicationController
     
   end
   
+  def mypage_selling
+    @every_book = Book.search(params[:bookname])
+  end
+  
+  
   def list
     @every_book = Book.search(params[:bookname])
+  #  @user_id = params[:id]
+  #  @books = Book.where(user_id: @user_id)
   end
   
   def book_content
   
   @one_book = Book.find(params[:id])
   end
-  
+  # 책 삭제
   def delete_book
     @one_book = Book.find(params[:id])
     @one_book.destroy
+    
+    redirect_to '/list'
+  end
+  
+  def update_book_view
+    @one_book = Book.find(params[:id])
+  end
+  
+  def update_book
+    @one_book = Book.find(params[:id])
+    @one_book.subject = params[:subject]
+    @one_book.bookname = params[:bookname]
+    @one_book.writer = params[:writer]
+    @one_book.lesson = params[:lesson]
+    @one_book.publish = params[:publish]
+    @one_book.phone_number = params[:phone_number]
+    @one_book.detail = params[:detail]
+    @one_book.save
     
     redirect_to '/list'
   end

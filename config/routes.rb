@@ -15,12 +15,15 @@ Rails.application.routes.draw do
   get 'bookup' => "home#bookup"
   get 'division' => "home#division"
   
+  get 'clean/:id' => "home#clean"
+  
   get 'book_content/:id' => "home#book_content"
   post '/bookupload' => "home#bookupload"
   
   get '/mypage_selling' => "home#mypage_selling"
-  get 'delete_book/:@one_book.id' => 'home#delete_book'
-  
+  get 'delete_book/:id' => 'home#delete_book' #책삭제
+  get 'update_book_view/:id' => 'home#update_book_view'
+  post 'update_book/:id' => 'home#update_book'
   # 여기서부터 신새날이 게시판 route를 올린다-------------------------------------------
   
   get '/index2' => "home#index2"

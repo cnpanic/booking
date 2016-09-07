@@ -26,7 +26,11 @@
                                             </div>
                                         </div>
                                   </form>
-                              <button class="btn btn-default" id="main_btn" onclick="location.href='/list'">책 살펴보기</button>
+                        <% if user_signed_in? %>
+                              <button class="btn btn-default" id="main_btn" onclick="location.href='/bookup'">책 등록하기</button>
+                        <% else %>
+                              <button class="btn btn-default" id="main_btn" onclick="">로그인을 하십시오</button>
+                        <% end %>
                         </div>
                      </div>
                   </div>
