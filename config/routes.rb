@@ -49,6 +49,21 @@ Rails.application.routes.draw do
   post '/bookreply' => "home#bookreply"
   
   
+  # faq 게시판
+
+  get '/faq_listboard' => "home#faq_listboard"
+  
+  get '/faq_index' => "home#faq_index"
+  
+  post '/faq_write' => "home#faq_write"
+  
+  get '/faq_show/:faq_id' => "home#faq_show"
+  
+  get '/faq_update/:faq_id' => "home#faq_update"
+  
+  post '/faq_real_update/:faq_id'=> "home#faq_real_update"
+  
+  get 'faq_destroy/:faq_id' => "home#faq_id"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

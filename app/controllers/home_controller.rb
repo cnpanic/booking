@@ -1,9 +1,7 @@
 class HomeController < ApplicationController
   
   def index
-
      @every_book = Book.search(params[:bookname])
-    
   end
 
   def clean
@@ -109,10 +107,6 @@ class HomeController < ApplicationController
 
   def show
     @show_content = Post.find(params[:post_id])
-    
-    
-   
-   
   end
 
   def list_board
@@ -149,8 +143,58 @@ class HomeController < ApplicationController
     new_book_reply.save 
     redirect_to '/book_content/' + params[:book_id]
   end
+  # 여기부터 faq 게시판--------------------------------------------
+  def faq
+    @show_faq = Faq.paginate(:page => params[:page], :per_page => 10)
+  end
   
+  def faq_listboard
+    @show_faq = Faq.paginate(:page => params[:page], :per_page => 10)
+  end
   
+   def faq_write
+    new_post = Faq.new
+    new_post.title = params[:title]
+    new_post.content = params[:content]
+    new_post.user = current_user
+    new_post.save
+    redirect_to '/faq'
+   end
+
+  def faq_update
+    @faq_update=Faq.find(params[:faq_id])
+  end
+
+  def faq_real_update
+    update=Faq.find(params[:faq_id])
+    update.title=params[:title]
+    update.content=params[:content]
+    update.save
+    redirect_to '/faq_show/' + params[:faq_id]
+  end
+
+  def faq_destroy
+    delete= Faq.find(params[:faq_id])
+    delete.destroy
+    delete.save
+    redirect_to '/faq'
+  end
+
+
+  def faq_show
+    
+     @faq_show_content = Faq.find(params[:faq_id])
+    
+    
+  end
   
+  def faq_reply
+    new_faq_reply = Faq_reply.new
+    new_faq_reply.content = params[:reply]
+    new_faq_reply.faq_id= params[:id_faq]
+    new_faq_reply.user= current_user
+    new_faq_reply.save 
+    redirect_to :back
+  end
   
 end

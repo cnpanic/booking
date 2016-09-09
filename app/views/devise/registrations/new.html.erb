@@ -2,46 +2,46 @@
   <div class="container" style="margin-top:50px;">
     <div class="well col-md-3" style="background:#7f7f7f; background:rgba(255,255,255,0.5);">
       <center>
-        <h2>Sign up</h2>
+        <h2>회원가입</h2>
         
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
         
           <div class="field">
-            <%= f.label :email %><br />
+            <%= f.label :이메일 %><br />
             <%= f.email_field :email, autofocus: true %>
           </div>
           
           <div class="field">
-            <%= f.label :name %><br />
+            <%= f.label :이름 %><br />
             <%= f.text_field :name, autofocus: true %>
           </div>
           
           <div class="field">
-            <%= f.label :Major %><br />
+            <%= f.label :전공 %><br />
             <%= f.text_field :major, autofocus: true %>
           </div>
           
           <div class="field">
-            <%= f.label :nickname %><br />
+            <%= f.label :닉네임 %><br />
             <%= f.text_field :nickname, autofocus: true %>
           </div>
         
           <div class="field">
-            <%= f.label :password %>
+            <%= f.label :비밀번호 %>
             <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <em>(<%= @minimum_password_length %> 최소 6자리)</em>
             <% end %><br />
             <%= f.password_field :password, autocomplete: "off" %>
           </div>
         
           <div class="field">
-            <%= f.label :password_confirmation %><br />
+            <%= f.label :비밀번호_확인 %><br />
             <%= f.password_field :password_confirmation, autocomplete: "off" %>
           </div>
         
           <div class="actions">
-            <%= f.submit "Sign up" %>
+            <%= f.submit "가입하기" %>
           </div>
         <% end %>
         

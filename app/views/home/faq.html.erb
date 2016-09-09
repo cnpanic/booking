@@ -47,6 +47,8 @@
             </div>
         </div>
         <!-- /.row -->
+        
+        
 
         <!-- Content Row -->
         <div class="row">
@@ -55,12 +57,12 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</a>
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">추정호는 왜 정크랫이에요?</a>
                             </h4>
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse">
                             <div class="panel-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                몰라서 묻냐?
                             </div>
                         </div>
                     </div>
@@ -68,12 +70,12 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus?</a>
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">이 사이트 어케써여?</a>
                             </h4>
                         </div>
                         <div id="collapseTwo" class="panel-collapse collapse">
                             <div class="panel-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                써보고 말해 씨발
                             </div>
                         </div>
                     </div>
@@ -81,7 +83,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Aenean consequat lorem ut felis ullamcorper?</a>
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">뭐? 씨발? 말다했냐?</a>
                             </h4>
                         </div>
                         <div id="collapseThree" class="panel-collapse collapse">
@@ -188,7 +190,50 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
+    
+    
+    <!-- 여기서부터 질문게시판 -->
+    <div class="container">
+    <h1 style="margin-top:100px">FAQ 게시판</h1>
+    
+    
+    <div style="overflow-x:auto; margin-top:50px">
+      <table class="width table table-hover table-striped" style="background-color:white;">
+        <thead>
+          <th height="50">제목</th>
+          <th>작성자</th>
+          <th>학과</th>
+          <th>등록일</th>
+        </thead>
+      <% @show_faq.each do |f|%>
+        <tr onClick="location.href='/faq_show/<%=f.id%>'" style="cursor: pointer;" >
+          <td><%=f.title%></td>
+          <td><%= f.user.name %></td>
+          <td><%= f.user.major %></td>
+          <td><%=f.created_at.strftime("%m/ %d/ %Y")%></td>
+        </tr>
+      <%end%>
+      </table>
+      
+      <div align="center">
+        <%= will_paginate @show_faq, renderer: BootstrapPagination::Rails %>
+      </div>
+      
+      
+         <% if user_signed_in? %>
+            <form action ="/faq_index" method="get">
+                <div class="form-group">
+                <button type="submit" class="btn btn-default" style ="margin-top: 15px; margin-left:1044px" >글쓰기</button>
+                </div>
+            </form>
+          <% else %>
+    				  <li><%= link_to "로그인 하십시오.", new_user_session_path, data: {confirm: "로그인 하시겠습니까?" }%></li>
+						
+		      <% end %>
+          
+    </div>
+</div>
+    
 </body>
 
 </html>

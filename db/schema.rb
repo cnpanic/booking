@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160831175041) do
+ActiveRecord::Schema.define(version: 20160909050020) do
 
   create_table "bookreplies", force: :cascade do |t|
     t.text     "content"
@@ -34,6 +34,22 @@ ActiveRecord::Schema.define(version: 20160831175041) do
     t.datetime "updated_at",               null: false
     t.integer  "user_id"
     t.integer  "selling",      default: 0
+  end
+
+  create_table "faq_replies", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "faq_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "faqs", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|

@@ -7,11 +7,11 @@
    
         <div class="well" style="margin-top: 100px; border:1px black;" >
                     <div class="row">
-                      <div class="col-md-2"><%= @show_content.user.major%>   <%= @show_content.user.name%></div>
+                      <div class="col-md-2">작성자: <%= @show_content.user.major%>   <%= @show_content.user.name%></div>
+                      <div class="col-md-1"></div>
                       <div class="col-md-6">제목: <%=@show_content.title%></div>
-                      <div class="col-md-1">본 횟 수</div>
-                      <div class="col-md-1">댓글 수</div>
-                      <div class="col-md-2"><%=@show_content.created_at.strftime("%m/ %d/ %Y")%></div>
+                      <div class="col-md-2">작성일: <%=@show_content.created_at.strftime("%m/ %d/ %Y")%></div>
+                      <div class="col-md-1"></div>
                     </div>
         </div>
   
