@@ -35,13 +35,13 @@ width: 600px;
 
 .card.hovercard {
   position: relative;
-  width: 350px;
+  width: 100%;
   min-height: 350px;
   padding-top: 0;
   overflow: hidden;
   text-align: center;
   background-color: #fff;
-  margin-top: 35px;
+  
 }
 
 .card.hovercard img {
@@ -105,21 +105,21 @@ width: 600px;
 }
 
 nav.navbar-findcond { background: #fff; border-color: #ccc; box-shadow: 0 0 2px 0 #ccc; }
-nav.navbar-findcond a { color: #14a6ef; font-weight: 500; }
-nav.navbar-findcond ul.navbar-nav a { color: #14a6ef; border-style: solid; border-width: 0 0 2px 0; border-color: #fff; font-weight: 500; }
+nav.navbar-findcond a { color: #f38c08; font-weight: 500; }
+nav.navbar-findcond ul.navbar-nav a { color: #f38c08; border-style: solid; border-width: 0 0 2px 0; border-color: #fff; font-weight: 500; }
 nav.navbar-findcond ul.navbar-nav a:hover,
 nav.navbar-findcond ul.navbar-nav a:visited,
 nav.navbar-findcond ul.navbar-nav a:focus,
 nav.navbar-findcond ul.navbar-nav a:active { background: #fff; }
-nav.navbar-findcond ul.navbar-nav a:hover { border-color: #14a6ef; }
+nav.navbar-findcond ul.navbar-nav a:hover { border-color: #f38c08; }
 nav.navbar-findcond li.divider { background: #ccc; }
-nav.navbar-findcond button.navbar-toggle { background: #14a6ef; border-radius: 2px; }
+nav.navbar-findcond button.navbar-toggle { background: #f38c08; border-radius: 2px; }
 nav.navbar-findcond button.navbar-toggle:hover { background: #999; }
 nav.navbar-findcond button.navbar-toggle > span.icon-bar { background: #fff; }
 nav.navbar-findcond ul.dropdown-menu { border: 0; background: #fff; border-radius: 4px; margin: 4px 0; box-shadow: 0 0 4px 0 #ccc; }
 nav.navbar-findcond ul.dropdown-menu > li > a { color: #444; }
-nav.navbar-findcond ul.dropdown-menu > li > a:hover { background: #14a6ef; color: #fff; }
-nav.navbar-findcond span.badge { background: #14a6ef; font-weight: normal; font-size: 16px; margin: 0 4px; }
+nav.navbar-findcond ul.dropdown-menu > li > a:hover { background: #f38c08; color: #fff; }
+nav.navbar-findcond span.badge { background: #f38c08; font-weight: normal; font-size: 16px; margin: 0 4px; }
 nav.navbar-findcond span.badge.new { background: rgba(255, 0, 0, 0.8); color: #fff; }
 
 
@@ -172,7 +172,7 @@ nav.navbar-findcond span.badge.new { background: rgba(255, 0, 0, 0.8); color: #f
 }
 #main_btn{
   margin-top: 45px;
-  background-color: #46b9f2; /* Green */
+  background-color: #f38c08; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -188,4 +188,16 @@ nav.navbar-findcond span.badge.new { background: rgba(255, 0, 0, 0.8); color: #f
 }
 .breadcrumb{
   background-color: #c4d9ea;
+}
+.well{
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+  border: 3px solid white;
+  padding:20px 30px;
+  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

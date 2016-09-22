@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160909050020) do
+ActiveRecord::Schema.define(version: 20160909064754) do
 
   create_table "bookreplies", force: :cascade do |t|
     t.text     "content"
@@ -29,14 +29,16 @@ ActiveRecord::Schema.define(version: 20160909050020) do
     t.string   "publish"
     t.integer  "phone_number"
     t.string   "detail"
-    t.string   "image_url"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "first_image_url"
+    t.string   "second_image_url"
+    t.string   "third_image_url"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.integer  "user_id"
-    t.integer  "selling",      default: 0
+    t.integer  "selling",          default: 0
   end
 
-  create_table "faq_replies", force: :cascade do |t|
+  create_table "faqreplies", force: :cascade do |t|
     t.text     "content"
     t.integer  "user_id"
     t.integer  "faq_id"

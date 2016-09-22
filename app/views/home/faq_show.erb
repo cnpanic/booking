@@ -30,7 +30,7 @@
             </table>
         </div>
         
-       <form action ="/reply_write" method="POST">
+       <form action ="/faq_reply" method="POST">
               <div class="form-group">
                   <div class="well">
                         <input type="hidden" value="<%=@faq_show_content.id%>" name="id_faq"> 
@@ -41,7 +41,7 @@
 		              
 		          
     		         <table class="table" style="margin-bottom:150px;"> 
-                           <% @faq_show_content.faq_replies.each do |r| %>
+                           <% @faq_show_content.faqreplies.each do |r| %>
                            <tr>
                           <td><p><%= r.user.name%>:</p><%= r.content %></td>   
                           </tr>

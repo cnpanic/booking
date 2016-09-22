@@ -26,10 +26,18 @@ class HomeController < ApplicationController
     new_book.user = current_user
     
     
-    uploader = BookUploader.new
-    file = params[:pic]
-    uploader.store!(file)
-    new_book.image_url = uploader.thumb.url
+    f_uploader = BookUploader.new
+    s_uploader = SecUploader.new
+    t_uploader = ThiUploader.new
+    file = params[:pic1]
+    file2 = params[:pic2]
+    file3 = params[:pic3]
+    f_uploader.store!(file)
+    s_uploader.store!(file2)
+    t_uploader.store!(file3)
+    new_book.first_image_url = f_uploader.thumb.url
+    new_book.second_image_url = s_uploader.thumb.url
+    new_book.third_image_url = t_uploader.thumb.url
     new_book.save
      
     
@@ -189,7 +197,7 @@ class HomeController < ApplicationController
   end
   
   def faq_reply
-    new_faq_reply = Faq_reply.new
+    new_faq_reply = Faqreply.new
     new_faq_reply.content = params[:reply]
     new_faq_reply.faq_id= params[:id_faq]
     new_faq_reply.user= current_user

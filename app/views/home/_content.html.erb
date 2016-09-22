@@ -1,6 +1,6 @@
 
     <!-- Page Content -->
-<div class="container">
+<div class="container-fluid">
        <!-- Portfolio Section -->
     <div class="row">
         <% @every_book.each do |p| %> 
@@ -9,7 +9,7 @@
                 <div class="card hovercard" style="cursor: pointer">
              
                     <% if p.selling == 0 %> 
-                        <img src="<%= p.image_url %>" style="width: 350px; height: 200px" alt=""/>
+                        <img src="<%= p.first_image_url %>" style="width: 100%; height: 200px" alt=""/>
                     <% else %>
                         <img src="http://joonggo.sarangbang.com/mobile/img/saleOk.png" style="width: 350px; height: 200px" alt=""/>
                         <div>판매-------------------------------완료</div>

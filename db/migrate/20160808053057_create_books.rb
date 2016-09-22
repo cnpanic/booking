@@ -9,7 +9,9 @@ class CreateBooks < ActiveRecord::Migration
       t.string :publish #출판사
       t.integer :phone_number #전화번호
       t.string :detail #기타 상세내용
-      t.string :image_url #사진 url
+      t.string :first_image_url #사진 url1
+      t.string :second_image_url #사진 url2
+      t.string :third_image_url #사진 url3
       t.datetime :created_at #만들어진 시간
       t.datetime :updated_at #수정된 시간 
       t.integer :user_id 

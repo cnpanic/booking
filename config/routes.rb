@@ -64,6 +64,8 @@ Rails.application.routes.draw do
   post '/faq_real_update/:faq_id'=> "home#faq_real_update"
   
   get 'faq_destroy/:faq_id' => "home#faq_id"
+  
+  post '/faq_reply' =>"home#faq_reply"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

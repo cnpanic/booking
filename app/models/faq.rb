@@ -1,6 +1,6 @@
 class Faq < ActiveRecord::Base
     
     belongs_to :user
-    has_many :faq_replies
+    has_many :faqreplies
     
 end
