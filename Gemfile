@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-gem 'will_paginate-bootstrap' 
+gem 'will_paginate-bootstrap'
 gem "fog-aws"
 gem 'carrierwave'
 gem 'mini_magick'
@@ -11,8 +11,8 @@ gem 'font-awesome-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
-gem 'pg'
+gem 'sqlite3'
+
 gem 'passenger'
 gem 'mysql2'
 gem 'heroku'
@@ -56,9 +56,9 @@ group :development do
   gem 'sqlite3'
 end
 
-group :production do 
+group :production do
 
-  gem 'pg'
+
   gem 'rails_12factor'
 
 end
