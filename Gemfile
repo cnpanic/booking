@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'will_paginate-bootstrap'
 gem "fog-aws"
 gem 'carrierwave'
@@ -24,6 +23,11 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
+
+gem 'awesome_print', require:"ap"
+gem 'pry'
+gem 'faker'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

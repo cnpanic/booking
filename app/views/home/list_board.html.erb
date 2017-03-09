@@ -45,8 +45,8 @@ body {
 <body>
 <div class="container" style="margin-bottom:400px">
     <h1 style="margin-top:100px">자유게시판</h1>
-    
-    
+
+
     <div style="overflow-x:auto; margin-top:50px">
       <table class="width table table-hover table-striped" style="background-color:white;">
         <thead>
@@ -64,12 +64,12 @@ body {
         </tr>
       <%end%>
       </table>
-      
+
       <div align="center">
         <%= will_paginate @show_post, renderer: BootstrapPagination::Rails %>
       </div>
-      
-      
+
+
          <% if user_signed_in? %>
             <form action ="/index2" method="get">
                 <div class="form-group">
@@ -78,9 +78,9 @@ body {
             </form>
           <% else %>
     				  <li><%= link_to "로그인 하십시오.", new_user_session_path, data: {confirm: "로그인 하시겠습니까?" }%></li>
-						
+
 		      <% end %>
-          
+
     </div>
 </div>
 
